@@ -53,7 +53,7 @@
 
 ### Key Features <a name="key-features"></a>
 
-- Classic Blog App
+- Classic Blog Application
 - Users can make posts
 - Users can make comments on the posts
 - Users can add likes to posts or comments
