@@ -2,7 +2,10 @@ require './spec/rails_helper'
 
 RSpec.describe Post, type: :model do
   let(:current_user) { User.create!(name: 'Mesi', photo: 'https://unsplash.com/photos/man-in-front-of-laptop-computer-in-shallow-focus-photography-LNRyGwIJr5c', bio: 'Web developer from Romania.', posts_counter: 1) }
-  subject { Post.new(title: 'Module restart and frustrations', text: 'test', author: current_user, comments_counter: 8, likes_counter: 12) }
+  subject do
+    Post.new(title: 'Module restart and frustrations', text: 'test', author: current_user, comments_counter: 8,
+             likes_counter: 12)
+  end
 
   before { subject.save }
 

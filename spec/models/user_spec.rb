@@ -1,9 +1,9 @@
 require './spec/rails_helper'
 
 RSpec.describe User, type: :model do
-  subject {User.new(name: 'Mesi', photo: 'https://unsplash.com/photos/man-in-front-of-laptop-computer-in-shallow-focus-photography-LNRyGwIJr5c', bio: 'Web developer from Romania.', posts_counter: 1)}
+  subject { User.new(name: 'Mesi', photo: 'https://unsplash.com/photos/man-in-front-of-laptop-computer-in-shallow-focus-photography-LNRyGwIJr5c', bio: 'Web developer from Romania.', posts_counter: 1) }
 
-  before { subject.save}
+  before { subject.save }
 
   it 'user should be valid' do
     expect(subject).to be_valid
