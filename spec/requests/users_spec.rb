@@ -8,5 +8,10 @@ RSpec.describe 'Users', type: :request do
       expect(response).to render_template('index')
       expect(response.body).to include('all users of the app will arrive')
     end
+
+    it 'should render the show page with specifics of one user' do
+      get '/users/1'
+      expect(response).to have_http_status(200)
+    end
   end
 end
