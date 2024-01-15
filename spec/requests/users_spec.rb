@@ -6,6 +6,7 @@ RSpec.describe 'Users', type: :request do
       get '/users'
       expect(response).to have_http_status(200)
       expect(response).to render_template('index')
+      expect(response.body).to include('all users of the app will arrive')
     end
   end
 end
