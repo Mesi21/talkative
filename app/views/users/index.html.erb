@@ -1,8 +1,6 @@
 <section class='all-users'>
+  <h1 class='shadow'>ALL OUR BLOGERS</h1>
   <% @users.each do |user| %>
-    <%= link_to user_path(user.id) do %>
-      <%= user.name %>
-    <% end %>
-    <%= user.posts_counter || 0 %>
+    <%= render partial: 'user_box', locals: {user:user} %>
   <% end %>
 </section>
