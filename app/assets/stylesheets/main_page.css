@@ -62,14 +62,7 @@ body {
   background-color: #EAD7D7;
 }
 
-#lks {
+#lks, #statistics {
   justify-content: space-between;
-}
-
-.statistics {
-  padding: 0;
-  width: 50%;
   align-items: center;
-  justify-content: space-evenly;
 }
-

@@ -15,9 +15,9 @@ end
 end
 
 200.times do
-  Comment.create(post_id: Faker::Number.between(from: 1, to: 30), text:Faker::Lorem.sentence)
+  Comment.create(user:User.find(Faker::Number.between(from: 1, to: 30)), post_id: Faker::Number.between(from: 1, to: 50), text:Faker::Lorem.sentence)
 end
 
 350.times do
-  Like.create(post_id: Faker::Number.between(from: 1, to: 30))
+  Like.create(user:User.find(Faker::Number.between(from: 1, to: 30)), post_id: Faker::Number.between(from: 1, to: 200))
 end
