@@ -1,0 +1,15 @@
+<ul class="list-group list-group-flush">
+  <% i=1 %>
+  <% @user.last_three_posts.each do |p| %>     
+    <li class="list-group-item">
+      <h5>Post <%= i %>: <strong><%= p.title %></strong></h5>
+    </li>
+    <% i += 1 %>
+    <li class="list-group-item"><%= p.text.truncate(90) %></li>
+    <li class="list-group-item d-flex flex-row" id="lks">
+      <%= link_to 'View post', user_post_path(@user, p), class: 'btn btn-view' %>
+      <p>Comments: <%= p.comments_counter %></p>
+      <p>Likes: <%= p.likes_counter %></p>
+    </li>
+  <% end %>
+</ul>
