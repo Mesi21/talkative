@@ -1,11 +1,13 @@
-p, h1, h5 {
+p,
+h1,
+h5 {
   margin: 0;
   padding: 0;
 }
 
 body {
   padding: 20px;
-  background-color: #171A21;
+  background-color: #171a21;
 }
 
 .all-users {
@@ -21,7 +23,7 @@ body {
   padding: 80px;
   text-align: center;
   margin: 80px auto;
-  background-color: #E09F3E;
+  background-color: #e09F3e;
   border-radius: 40px;
   color: #e4e0e0;
 }
@@ -32,7 +34,8 @@ body {
   background-color: #eee8e8;
 }
 
-.card-text, .card-body {
+.card-text,
+.card-body {
   display: flex;
   flex-direction: column;
 }
@@ -53,16 +56,17 @@ body {
 }
 
 .card-text a:hover {
-  color: #E09F3E;
+  color: #e09F3e;
   font-weight: bold;
   font-size: 1.2em;
 }
 
 .user-photo {
-  background-color: #EAD7D7;
+  background-color: #ead7d7;
 }
 
-#lks, #statistics {
+#lks,
+#statistics {
   justify-content: space-between;
   align-items: center;
 }
