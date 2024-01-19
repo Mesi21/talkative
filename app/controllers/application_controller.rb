@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
+  before_action :current_user
+
   def current_user
-    @curr_user = User.first
+    @current_user = User.first
   end
 end
