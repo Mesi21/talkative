@@ -76,13 +76,12 @@ body {
   width: 50%;
   margin: 5px auto;
   height: 1vh;
-
 }
 
 #addPost {
   width: 60%;
   margin: 10px auto;
-  border-radius: 5;
+  border-radius: 5px;
 }
 
 .btn-view {
