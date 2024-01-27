@@ -1,0 +1,5 @@
+<section>
+<%= bootstrap_form_with(url: "/posts/#{@post.id}/likes", scope: :like, local: true) do |f| %>
+    <%= f.submit "👍 Like" , data: {disable_with: "👍"}, class: "btn btn-dark mb-3", id: 'like-btn' %>
+  <%end%>
+</section>

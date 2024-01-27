@@ -10,7 +10,7 @@
   <ul class="list-group list-group-flush" id="all-posts">
     <% @user.posts.each do |p| %>     
       <li class="list-group-item">
-        <h5>Title: <strong><%= p.title %></strong></h5>
+        <h5>Title: <strong><%= p.title.capitalize %></strong></h5>
       </li>
       <li class="list-group-item"><%= p.text.truncate(90) %></li>
       <li class="list-group-item d-flex flex-row" id="lks-posts">
