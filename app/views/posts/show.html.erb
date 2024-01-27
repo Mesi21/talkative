@@ -1,7 +1,7 @@
 <div class="card" style="width: 30rem;">
   <ul class="list-group list-group-flush" id="all-posts"> 
       <li class="list-group-item">
-        <h5><strong><%= @post.title %></strong> by <%= @user.name %></h5>
+        <h5><strong><%= @post.title.capitalize %></strong> by <%= @user.name %></h5>
         <div class="d-flex flex-row" id="statistics">            
           <p>Comments: <%= @post.comments_counter %></p>
           <p>Likes: <%= @post.likes_counter %></p>
@@ -15,7 +15,12 @@
         <% end %>
       </li>
   </ul>
+  <div class="card-body d-flex flex-column" id="navigate">
+    <%= render partial: "likes/create_like" %>
+    <%= render partial: 'comments/create_comment' %>
+  </div>
+  
   <div class="card-body d-flex flex-row" id="navigate">
-    <%= link_to 'Back', users_path(@user), class: 'btn btn-lg btn-danger' %>
+    <%= link_to 'Back', user_posts_path(@user), class: 'btn btn-lg btn-danger' %>
   </div>
 </div>

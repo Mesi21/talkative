@@ -66,7 +66,37 @@ body {
 }
 
 #lks,
-#statistics {
+#statistics,
+#lks-posts {
   justify-content: space-between;
   align-items: center;
+}
+
+.new_post {
+  width: 50%;
+  margin: 5px auto;
+  height: 1vh;
+}
+
+#addPost {
+  width: 60%;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+.btn-view {
+  color: #fff;
+  background-color: #2d3c3f;
+}
+
+.btn-view:hover {
+  background-color: #99ccd6;
+}
+
+.form-group {
+  margin: 20px auto;
+  padding: 20px;
+  color: #fff;
+  background-color: #617073;
+  border-radius: 10px;
 }
