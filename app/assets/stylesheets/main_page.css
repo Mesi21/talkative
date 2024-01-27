@@ -84,3 +84,21 @@ body {
   margin: 10px auto;
   border-radius: 5;
 }
+
+.btn-view {
+  color: #fff;
+  background-color: #2d3c3f;
+}
+
+.btn-view:hover {
+  background-color: #99ccd6;
+}
+
+.form-group {
+  margin: 20px auto;
+  padding: 20px;
+  color: #fff;
+  background-color: #617073;
+  border-radius: 10px;
+}
+
