@@ -27,6 +27,7 @@ describe 'User Index Page Features', type: :feature, js: true do
 
   it 'lists the number of posts of the user' do
     expect(page).to have_content('Number of posts:')
+    expect(page).to have_content(new_user.posts_counter)
   end
 
   it 'the name of the user redirects to the user\'s show page' do
