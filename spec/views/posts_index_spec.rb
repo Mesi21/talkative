@@ -66,4 +66,8 @@ RSpec.describe 'posts#index', type: :feature do
   it 'has a button View post' do
     expect(page).to have_selector(:link_or_button, 'View post')
   end
+
+  it 'should display a pagination button' do
+    expect(page).to have_button('Pagination')
+  end
 end
