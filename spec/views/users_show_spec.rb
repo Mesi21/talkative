@@ -44,10 +44,10 @@ RSpec.feature 'Users Show', type: :feature do
     expect(current_path).to eq(user_post_path(first_user, first_user.last_three_posts.first))
   end
 
-  # it 'redirects to the users posts index page when you click on "See all posts"' do
-  #   click_link 'See All Posts'
-  #   expected_path = user_posts_path(user).chomp('/')
-  #   actual_path = page.current_path.chomp('/')
-  #   expect(actual_path).to eq(expected_path)
-  # end
+  it 'redirects to the index page of the posts on button click"' do
+    click_link 'View more posts'
+    expected_path = user_posts_path(first_user)
+    actual_path = page.current_path
+    expect(actual_path).to eq(expected_path)
+  end
 end
