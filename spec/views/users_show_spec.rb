@@ -24,8 +24,10 @@ RSpec.feature 'Users Show', type: :feature do
 
   it 'should be displayed on the users_show page' do
     expect(page).to have_content('Mesi')
+    expect(page).to have_content(first_user.posts_counter)
     expect(page).to have_link('View more posts')
-    expect(page).to have_selector('img[src="https://unsplash.com/photos/a-group-of-people-holding-a-teddy-bear-together-FAqkG14YOKM"]')
+    expect(page).to have_content(first_user.bio)
+    expect(page).to have_css('img[src="https://unsplash.com/photos/a-group-of-people-holding-a-teddy-bear-together-FAqkG14YOKM"]')
   end
 
   it 'displays the user\'s last three posts' do
