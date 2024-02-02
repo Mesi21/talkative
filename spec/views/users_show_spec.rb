@@ -30,10 +30,24 @@ RSpec.feature 'Users Show', type: :feature do
     expect(page).to have_css('img[src="https://unsplash.com/photos/a-group-of-people-holding-a-teddy-bear-together-FAqkG14YOKM"]')
   end
 
-  it 'displays the user\'s last three posts' do
+  it 'displays ownly the user\'s last three posts' do
     first_user.last_three_posts.each do |_p|
       expect(page).to have_content(post4.text)
+      expect(page).to have_content(post3.text)
+      expect(page).to have_content(post2.text)
       expect(page).to_not have_content(post1.text)
     end
   end
+
+  it 'redirects to the post show page when you click on the button See all posts' do
+    first('#btn-view-post').click
+    expect(current_path).to eq(user_post_path(first_user, first_user.last_three_posts.first))
+  end
+
+  # it 'redirects to the users posts index page when you click on "See all posts"' do
+  #   click_link 'See All Posts'
+  #   expected_path = user_posts_path(user).chomp('/')
+  #   actual_path = page.current_path.chomp('/')
+  #   expect(actual_path).to eq(expected_path)
+  # end
 end
