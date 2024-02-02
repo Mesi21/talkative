@@ -1,13 +1,29 @@
 require 'rails_helper'
 
 RSpec.describe 'posts#index', type: :feature do
-    let(:first_user) { User.create!(name: 'Mesi', photo: 'https://unsplash.com/photos/a-group-of-people-holding-a-teddy-bear-together-FAqkG14YOKM', bio: 'Mesi\'s biography', posts_counter: 3) }
-    let!(:post1) { Post.create!(author: first_user, title: 'Post #1', text: 'some text', comments_counter:2, likes_counter: 1) }
-    let!(:post2) { Post.create!(author: first_user, title: 'Post #2', text: 'another post content', comments_counter:2, likes_counter: 1) }
-    let!(:post3) { Post.create!(author: first_user, title: 'Post #3', text: 'a new post with some interesting stuff', comments_counter:3, likes_counter: 0) }
-    let!(:post4) { Post.create!(author: first_user, title: 'Post #4', text: 'a post that should not be present on this page', comments_counter:5, likes_counter: 10) }
-    let!(:post5) { Post.create!(author: first_user, title: 'Post #5', text: 'the fifth post of the first_user that has way more than nighty characters to check if the whole post is displayed or not on this page.', comments_counter:0, likes_counter: 7) }
-   
+  let(:first_user) { User.create!(name: 'Mesi', photo: 'https://unsplash.com/photos/a-group-of-people-holding-a-teddy-bear-together-FAqkG14YOKM', bio: 'Mesi\'s biography', posts_counter: 3) }
+  let!(:post1) do
+    Post.create!(author: first_user, title: 'Post #1', text: 'some text', comments_counter: 2, likes_counter: 1)
+  end
+  let!(:post2) do
+    Post.create!(author: first_user, title: 'Post #2', text: 'another post content', comments_counter: 2,
+                 likes_counter: 1)
+  end
+  let!(:post3) do
+    Post.create!(author: first_user, title: 'Post #3', text: 'a new post with some interesting stuff',
+                 comments_counter: 3, likes_counter: 0)
+  end
+  let!(:post4) do
+    Post.create!(author: first_user, title: 'Post #4', text: 'a post that should not be present on this page',
+                 comments_counter: 5, likes_counter: 10)
+  end
+  let!(:post5) do
+    Post.create!(author: first_user, title: 'Post #5',
+                 text: 'the fifth post of the first_user that has way more than nighty characters
+                 to check if the whole post is displayed or not on this page.',
+                 comments_counter: 0, likes_counter: 7)
+  end
+
   before do
     visit user_posts_path(first_user)
   end

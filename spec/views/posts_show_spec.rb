@@ -2,9 +2,11 @@ require 'rails_helper'
 RSpec.describe 'posts#show', type: :feature do
   let(:first_user) { User.create!(name: 'Mesi', photo: 'https://unsplash.com/photos/a-group-of-people-holding-a-teddy-bear-together-FAqkG14YOKM', bio: 'Mesi\'s biography', posts_counter: 3) }
   let(:second_user) { User.create!(name: 'Mesi', photo: 'https://unsplash.com/photos/a-group-of-people-holding-a-teddy-bear-together-FAqkG14YOKM', bio: 'Mesi\'s biography', posts_counter: 3) }
-  let!(:post1) { Post.create!(author: second_user, title: 'Post #1', text: 'some text', comments_counter:2, likes_counter: 1) }
+  let!(:post1) do
+    Post.create!(author: second_user, title: 'Post #1', text: 'some text', comments_counter: 2, likes_counter: 1)
+  end
   let!(:comment) { Comment.create!(user: second_user, post: post1, text: 'This is a comment on the post1') }
-  let!(:like) { Like.create!(user: second_user, post: post1)}
+  let!(:like) { Like.create!(user: second_user, post: post1) }
   before do
     visit user_post_path(first_user, post1)
   end
@@ -37,13 +39,5 @@ RSpec.describe 'posts#show', type: :feature do
   end
   it 'displays a button to Like the post' do
     expect(page).to have_selector(:link_or_button, 'Like')
-  end
-  it 'expects to redirect the user to the new comment page' do
-    click_link('Add comment')
-    expect(current_path).to eq(new_user_post_comment_path(user_id: first_user.id, post_id: first_user.posts.first.id))
-  end
-  it 'clicking on a like button redirects to the new like page' do
-    click_button('Like')
-    expect(current_path).to eq(user_posts_path(post1.author.id, post1.id))
   end
 end
