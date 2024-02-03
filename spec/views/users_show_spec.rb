@@ -91,7 +91,6 @@ RSpec.feature 'Users Show', type: :feature do
   end
 end
 
-
 RSpec.feature 'Users Show', type: :feature do
   let(:first_user) { User.create!(name: 'Mesi', photo: 'https://unsplash.com/photos/a-group-of-people-holding-a-teddy-bear-together-FAqkG14YOKM', bio: 'Mesi\'s biography', posts_counter: 3) }
   let!(:post1) do
