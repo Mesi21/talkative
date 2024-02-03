@@ -10,6 +10,10 @@ body {
   background-color: #171a21;
 }
 
+#navbar {
+  width: 100%;
+}
+
 .all-users {
   margin: 50px auto;
   padding: 20px;
@@ -99,4 +103,22 @@ body {
   color: #fff;
   background-color: #617073;
   border-radius: 10px;
+}
+
+#sign-up-page,
+#login-page {
+  width: 60%;
+  margin: 10px auto;
+  padding: 50px 0;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  align-items: center;
+  background-color: #617073;
+  color: #dfdbdb;
+}
+
+#btn-login {
+  width: 100%;
 }
