@@ -136,7 +136,7 @@ To run tests, run the following command:
   rspec spec
 ```
 
-## 👥 Author<a name="authors" id="authors></a>
+## 👥 Author <a name="authors" id="authors></a>
 
 👤 **Molnar Emese**
   - GitHub: [@Mesi21](https://github.com/Mesi21)
